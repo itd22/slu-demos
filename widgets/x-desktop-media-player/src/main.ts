@@ -6,17 +6,16 @@ import App from "./App.svelte";
 
 import "./styles.css";
 
-mount(App, {
-  target: document.getElementById("root")!,
-});
-
 const widget = Widget.getCurrent();
-const { webview } = widget;
+const { window } = widget;
 
 await widget.init();
 
-await webview.setSize(new LogicalSize(400, 120)); // set the widget initial size
-await webview.setMinSize(new LogicalSize(400, 120));
+await window.setSize(new LogicalSize(400, 120)); // set the widget initial size
+await window.setMinSize(new LogicalSize(400, 120));
 
 await widget.persistPositionAndSize();
-await webview.show();
+
+mount(App, {
+  target: document.getElementById("root")!,
+});

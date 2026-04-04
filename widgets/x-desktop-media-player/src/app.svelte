@@ -2,12 +2,14 @@
   import { players, locked, onNext, onPrevious, onPlay, fallbackImagePath } from "./state.svelte";
   import { getRandomPhrase } from "./phrases";
   import { core } from "@seelen-ui/lib/tauri";
+  import { onMount } from "svelte";
+  import { Widget } from "@seelen-ui/lib";
 
   $: player = $players.find((p) => p.default);
 
   $: percent = (() => {
-    const totalNs = player?.timeline.end;
-    const currentNs = player?.timeline.position;
+    const totalNs = player?.timeline.end || 1;
+    const currentNs = player?.timeline.position || 0;
     return currentNs ? (currentNs / totalNs) * 100 : 0;
   })();
 
@@ -15,6 +17,10 @@
   function refreshPhrase() {
     phrase = getRandomPhrase();
   }
+
+  onMount(() => {
+    Widget.self.ready();
+  });
 </script>
 
 <div data-tauri-drag-region={!$locked} class="player-container">

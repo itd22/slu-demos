@@ -1,13 +1,16 @@
-id: '@eythaann/desktop-media-player'
+id: "@eythaann/desktop-media-player"
 icon: MdLibraryMusic
 metadata:
   displayName: !extend ./i18n/display_name.yml
   description: !extend ./i18n/description.yml
 preset: Desktop
+
+html: !include ./index.html
+css: !include ./index.css
+js: !include ./index.js
+
 settings:
-  - group:
-      - config:
-          type: switch
-          key: locked
-          label: !extend ./i18n/config_locked.yml
-          defaultValue: false
+  - type: switch
+    key: locked
+    label: !extend ./i18n/config_locked.yml
+    defaultValue: false

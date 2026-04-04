@@ -4,12 +4,14 @@
     "widgets/*"
   ],
   "compilerOptions": {
+    "module": "esnext",
     "lib": [
       "esnext",
       "dom",
       "dom.iterable",
       "dom.asynciterable"
-    ]
+    ],
+    "moduleResolution": "bundler"
   },
   "exclude": [
     "node_modules",
@@ -17,6 +19,6 @@
     "**/dist/**"
   ],
   "imports": {
-    "@seelen-ui/lib": "npm:@seelen-ui/lib@^2.4.5"
+    "@seelen-ui/lib": "npm:@seelen-ui/lib@^2.5.8"
   }
 }

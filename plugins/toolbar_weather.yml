@@ -1,6 +1,6 @@
-id: '@eythaann/toolbar-weather'
-icon: 'TiWeatherPartlySunny'
-target: '@seelen/fancy-toolbar'
+id: "@eythaann/toolbar-weather"
+icon: "TiWeatherPartlySunny"
+target: "@seelen/fancy-toolbar"
 plugin:
   type: text
   withMediaControls: false

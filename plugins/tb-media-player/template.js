@@ -18,8 +18,11 @@ const content = [
   }),
   " ",
   Button({
-    content: icon(mediaSession.playing ? "TbPlayerPauseFilled" : "TbPlayerPlayFilled"),
-    onClick: `invoke(SeelenCommand.MediaTogglePlayPause, { id: '${mediaSession.umid}' })`,
+    content: icon(
+      mediaSession.playing ? "TbPlayerPauseFilled" : "TbPlayerPlayFilled",
+    ),
+    onClick:
+      `invoke(SeelenCommand.MediaTogglePlayPause, { id: '${mediaSession.umid}' })`,
   }),
   " ",
   Button({

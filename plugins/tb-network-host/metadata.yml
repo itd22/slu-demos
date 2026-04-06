@@ -1,0 +1,16 @@
+id: "@eythaann/toolbar-network-host"
+metadata:
+  displayName: !extend ./i18n/display_name.yml
+  description: !extend ./i18n/description.yml
+icon: "PiComputerTower"
+target: "@seelen/fancy-toolbar"
+plugin:
+  scopes:
+    - Network
+  template: !include ./template.js
+  tooltip: |-
+    return usingInterface ? ['MAC: ', usingInterface.mac] : 'No network adapter';
+  onClickV2: |-
+    open(`http://${usingInterface?.ipv4 || '127.0.0.1'}`);
+  style:
+    flexShrink: 0

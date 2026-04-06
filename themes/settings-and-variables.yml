@@ -1,4 +1,4 @@
-id: '@eythaann/variables-test'
+id: "@eythaann/variables-test"
 metadata:
   displayName: Variables Test
   description: this theme is just for testing
@@ -7,11 +7,11 @@ settings:
   - syntax: <color>
     name: --testing-settings
     label: Testing Color Setting1-1
-    initialValue: '#f00'
+    initialValue: "#f00"
   - syntax: <color>
     name: --testing-settings1-2
     label: Testing Color Setting 2
-    initialValue: '#00f'
+    initialValue: "#00f"
   - syntax: <length>
     name: --testing-sizes
     label: Testing Length Setting 3
@@ -24,7 +24,7 @@ settings:
   - syntax: <string>
     name: --testing-string
     label: Testing User Input
-    initialValue: 'hello world'
+    initialValue: "hello world"
   - syntax: <url>
     name: --testing-url
     label: Testing User URL Input
@@ -37,11 +37,11 @@ settings:
           name: --testing-settings2-1
           label: Testing Color Setting
           description: This is a description to test log text in the settings UI
-          initialValue: '#f00'
+          initialValue: "#f00"
         - syntax: <color>
           name: --testing-settings2-2
           label: Testing Color Setting 2
-          initialValue: '#00f'
+          initialValue: "#00f"
         - syntax: <length>
           name: --testing-sizes2
           label: Testing Length Setting 3
@@ -55,7 +55,7 @@ settings:
         - syntax: <string>
           name: --testing-string2
           label: Testing User Input
-          initialValue: 'hello world'
+          initialValue: "hello world"
         - syntax: <url>
           name: --testing-url2
           label: Testing User URL Input
@@ -67,11 +67,11 @@ settings:
               - syntax: <color>
                 name: --testing-settings2-1
                 label: Testing Color Setting
-                initialValue: '#f00'
+                initialValue: "#f00"
               - syntax: <color>
                 name: --testing-settings2-2
                 label: Testing Color Setting 2
-                initialValue: '#00f'
+                initialValue: "#00f"
               - syntax: <length>
                 name: --testing-sizes2
                 label: Testing Length Setting 3
@@ -92,7 +92,7 @@ settings:
               - syntax: <string>
                 name: --testing-string2
                 label: Testing User Input
-                initialValue: 'hello world'
+                initialValue: "hello world"
               - syntax: <url>
                 name: --testing-url2
                 label: Testing User URL Input

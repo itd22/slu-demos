@@ -1,0 +1,16 @@
+id: "@eythaann/toolbar-network-gateway"
+metadata:
+  displayName: !extend ./i18n/display_name.yml
+  description: !extend ./i18n/description.yml
+icon: "FaNetworkWired"
+target: "@seelen/fancy-toolbar"
+plugin:
+  scopes:
+    - Network
+  template: !include ./template.js
+  tooltip: |-
+    return usingInterface ? null : 'No network adapter';
+  onClickV2: |-
+    open(`http://${usingInterface?.gateway || '192.168.0.1'}`);
+  style:
+    flexShrink: 0

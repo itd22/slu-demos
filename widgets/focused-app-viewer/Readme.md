@@ -25,12 +25,39 @@ sudo apt install -y curl tar unzip
 ```
 
 ### 2. Install the Deno Runtime
+
+*Brew installation method *
+
+- formula installation command in your terminal window:
+
+```bash
+brew install deno
+```
+
+- brew Quick Verification & Upgrades
+Unlike the manual curl installation method, Homebrew automatically handles your system `PATH` configuration strings. 
+
+You can immediately verify that the compiler environment is live and keep it updated with these commands:
+
+```bash
+# Verify the runtime is active globally
+deno --version
+
+```
+
+
+-from website
+
 Run the official installer script to fetch and install the Deno compiler tools:
 
 ```bash
 curl -fsSL https://deno.land | sh
 ```
 *(Make sure to append the exported environment paths to your shell profile as prompted by the installer script output).*
+
+
+
+
 
 ---
 

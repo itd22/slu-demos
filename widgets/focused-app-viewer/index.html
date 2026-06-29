@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <style>
+    :root {
+      --font-family: system-ui, -apple-system, sans-serif;
+    }
+    body {
+      margin: 0;
+      padding: 0;
+      background: transparent;
+      font-family: var(--font-family);
+      display: flex;
+      align-items: center;
+      color: var(--seelen-text, #ffffff);
+    }
+    .focus-container {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 10px;
+      background: var(--seelen-bg-alt, rgba(255, 255, 255, 0.08));
+      border-radius: 6px;
+      font-size: 12px;
+      font-weight: 500;
+      transition: background 0.2s ease;
+    }
+    /* Highlight effect matching the active app design guidelines */
+    body[data-active-process="chrome"] .focus-container {
+      border-bottom: 2px solid #4285F4;
+    }
+    body[data-active-process="spotify"] .focus-container {
+      border-bottom: 2px solid #1DB954;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="focus-container">
+    <div id="active-app-name">Loading...</div>
+  </div>
+
+  <!-- Compiled bundler target script -->
+  <script type="module" src="./dist/main.js"></script>
+</body>
+</html>

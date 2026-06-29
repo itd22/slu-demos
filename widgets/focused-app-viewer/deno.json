@@ -1,0 +1,18 @@
+{
+  "tasks": {
+    "dev": "deno run --allow-read --allow-write --watch ./src/main.ts",
+    "bundle": "deno run -A https://deno.land ./src/main.ts --bundle --minify --outfile=./dist/main.js --format=esm"
+  },
+  "imports": {
+    "@seelen-ui/lib": "jsr:@seelen-ui/lib@^2.2.0"
+  },
+  "compilerOptions": {
+    "lib": ["dom", "deno.ns"]
+  },
+  "fmt": {
+    "useTabs": false,
+    "lineWidth": 100,
+    "indentWidth": 2,
+    "singleQuote": false
+  }
+}

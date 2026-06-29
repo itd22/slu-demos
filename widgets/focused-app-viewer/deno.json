@@ -1,7 +1,8 @@
 {
   "tasks": {
     "dev": "deno run --allow-read --allow-write --watch ./src/main.ts",
-    "bundle": "deno run -A https://deno.land ./src/main.ts --bundle --minify --outfile=./dist/main.js --format=esm"
+    "bundle": "deno run -A npm:esbuild ./src/main.ts --bundle --minify --format=esm --outfile=./dist/main.js --external:jsr:@seelen-ui/lib",
+    "bundle:debug": "deno run -A npm:esbuild ./src/main.ts --bundle --format=esm --outfile=./dist/main.js --external:jsr:@seelen-ui/lib"
   },
   "imports": {
     "@seelen-ui/lib": "jsr:@seelen-ui/lib@^2.2.0"

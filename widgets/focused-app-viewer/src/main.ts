@@ -1,4 +1,4 @@
-/*import { wm, events } from "@seelen-ui/lib";*/
+﻿/*import { wm, events } from "@seelen-ui/lib";*/
 import { wm, events } from "jsr:@seelen-ui/lib";
 // Select the visual target components
 const appNameElement = document.getElementById("active-app-name") as HTMLElement;

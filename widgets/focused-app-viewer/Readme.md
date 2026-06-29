@@ -1,4 +1,4 @@
-# Focused App Indicator Widget
+﻿# Focused App Indicator Widget
 
 An open-source, lightweight workspace module designed exclusively for the [Seelen UI Desktop Environment](https://seelen.io). This widget hooks natively into Seelen UI's integrated Tiling Window Manager (TWM) to capture and display the real-time process or window title of whichever application currently holds foreground system focus.
 
@@ -14,89 +14,67 @@ An open-source, lightweight workspace module designed exclusively for the [Seele
 
 ## Developer Machine Environment Setup
 
-Because this widget leverages the official `slu-demos` standard structure, compiling requires **Deno** as the primary runtime environment and module bundler. 
+Because this widget leverages the official `slu-demos` standard structure, compiling requires **Deno 2.x** as the primary runtime environment and module bundler.
 
-### 1. Install System Dependencies
-Execute the following commands in your Linux system environment (or WSL/Debian-based setups) to ensure core cURL and compression tools are ready:
+### 1. Install Deno 2.x
 
-```bash
-sudo apt update
-sudo apt install -y curl tar unzip
+**Windows (Winget):**
+```powershell
+winget install DenoLand.Deno
 ```
 
-### 2. Install the Deno Runtime
+**Windows (Scoop):**
+```powershell
+scoop install deno
+```
 
-*Brew installation method *
-
-- formula installation command in your terminal window:
-
+**macOS (Brew):**
 ```bash
 brew install deno
 ```
 
-- brew Quick Verification & Upgrades
-Unlike the manual curl installation method, Homebrew automatically handles your system `PATH` configuration strings. 
-
-You can immediately verify that the compiler environment is live and keep it updated with these commands:
-
+**Linux:**
 ```bash
-# Verify the runtime is active globally
+curl -fsSL https://deno.land/install.sh | sh
+```
+
+Verify:
+```bash
 deno --version
-
+# deno 2.x.x ...
 ```
-
-- insall by scoop
-
-```power
-scoop install deno
-```
-
--from website
-
-Run the official installer script to fetch and install the Deno compiler tools:
-
-```bash
-curl -fsSL https://deno.land | sh
-```
-*(Make sure to append the exported environment paths to your shell profile as prompted by the installer script output).*
-
-
-
-
 
 ---
 
-## Compilation Instructions
+## Compilation
 
-Once you have downloaded the project source package repository (or extracted its workspace tarball release), navigate directly into the development directory path to bundle the TypeScript code into client-side code:
+Navigate into the widget directory and run:
 
 ```bash
-# 1. Enter the specific extracted source tree target directory
-cd slu-demos/widgets/focused-app-viewer  
+cd slu-demos/widgets/focused-app-viewer
 
-# 2. Compile and bundle the TypeScript code using esbuild pipeline macro
+# Production build (minified ESM â†’ dist/main.js)
 deno task bundle
+
+# Debug build (readable ESM â†’ dist/main.js)
+deno task bundle:debug
 ```
 
-Running the `deno task bundle` macro instantly processes the dependencies, links up with the live `@seelen-ui/lib` runtime on JSR, optimizes spacing, and outputs a clean, production-ready execution script file straight into your local `./dist/main.js` sub-folder asset space.
+Both tasks use `npm:esbuild` via Deno â€” no separate `npm install` needed.
+
+> **Note:** The import `@seelen-ui/lib` resolves to `jsr:@seelen-ui/lib` via the
+> import map in `deno.json`. The npm version of this package does **not** export
+> `wm` or `events` â€” JSR is required.
 
 ---
 
 ## Deploying to Seelen UI
 
-To add your compiled custom component directory directly onto your live setup panel:
+Move the entire `focused-app-viewer` folder into your Seelen UI widgets directory:
 
-### 1. Move the Widget Bundle Folder
-Move your entire `focused-app-viewer` target folder workspace straight into your local Seelen system runtime directory configuration path. 
-
-On typical Windows architecture layouts, copy your directory directly into:
 ```text
 %LocalAppData%\Programs\Seelen UI\resources\public\widgets\
 ```
 
-### 2. Activate the Component
-1. Right-click on your active **Fancy Toolbar** or your lower **Seelenweg Dock** to open the options context tray.
-2. Click on **Settings** to reveal the system-wide resources management overlay profile page.
-3. Navigate directly over to the **Resources** left sidebar section category, then select **Widgets**.
-4. Locate the **Focused App Indicator** panel row card checkbox and toggle its switch state to **On**.
-5. Click **Save** to reload the layout container shell. Your active focused tracking element will instantly render live across your active monitor workspace layers.
+Then in Seelen UI: **Settings â†’ Resources â†’ Widgets â†’ Focused App Indicator â†’ Enable**.
+

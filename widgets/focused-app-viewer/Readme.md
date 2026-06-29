@@ -45,6 +45,11 @@ deno --version
 
 ```
 
+- insall by scoop
+
+```power
+scoop install deno
+```
 
 -from website
 
